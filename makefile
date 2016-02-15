@@ -1,18 +1,18 @@
 FILES :=                              \
     .travis.yml                       \
-    collatz-tests/dao384-RunCollatz.in   \
-    collatz-tests/dao384-RunCollatz.out  \
-    collatz-tests/dao384-TestCollatz.c++ \
-    collatz-tests/dao384-TestCollatz.out \
-    Collatz.c++                       \
-    Collatz.h                         \
-    Collatz.log                       \
+    voting-tests/dao384-RunVoting.in   \
+    voting-tests/dao384-RunVoting.out  \
+    voting-tests/dao384-TestVoting.c++ \
+    voting-tests/dao384-TestVoting.out \
+    Voting.c++                       \
+    Voting.h                         \
+    Voting.log                       \
     html                              \
-    RunCollatz.c++                    \
-    RunCollatz.in                     \
-    RunCollatz.out                    \
-    TestCollatz.c++                   \
-    TestCollatz.out
+    RunVoting.c++                    \
+    RunVoting.in                     \
+    RunVoting.out                    \
+    TestVoting.c++                   \
+    TestVoting.out
 
 CXX        := g++-4.8
 CXXFLAGS   := -pedantic -std=c++11 -Wall
@@ -44,18 +44,18 @@ clean:
 	rm -f *.gcda
 	rm -f *.gcno
 	rm -f *.gcov
-	rm -f RunCollatz
-	rm -f RunCollatz.tmp
-	rm -f TestCollatz
-	rm -f TestCollatz.tmp
+	rm -f RunVoting
+	rm -f RunVoting.tmp
+	rm -f TestVoting
+	rm -f TestVoting.tmp
 
 config:
 	git config -l
 
 scrub:
 	make clean
-	rm -f  Collatz.log
-	rm -rf collatz-tests
+	rm -f  Voting.log
+	rm -rf voting-tests
 	rm -rf html
 	rm -rf latex
 
@@ -66,32 +66,32 @@ status:
 	git remote -v
 	git status
 
-test: RunCollatz.tmp TestCollatz.tmp
+test: RunVoting.tmp TestVoting.tmp
 
-collatz-tests:
-	git clone https://github.com/cs371p-spring-2016/collatz-tests.git
+voting-tests:
+	git clone https://github.com/cs371p-spring-2016/voting-tests.git
 
-html: Doxyfile Collatz.h Collatz.c++ RunCollatz.c++ TestCollatz.c++
+html: Doxyfile Voting.h Voting.c++ RunVoting.c++ TestVoting.c++
 	doxygen Doxyfile
 
-Collatz.log:
-	git log > Collatz.log
+Voting.log:
+	git log > Voting.log
 
 Doxyfile:
 	doxygen -g
 
-RunCollatz: Collatz.h Collatz.c++ RunCollatz.c++
-	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) Collatz.c++ RunCollatz.c++ -o RunCollatz
+RunVoting: Voting.h Voting.c++ RunVoting.c++
+	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) Voting.c++ RunVoting.c++ -o RunVoting
 
-RunCollatz.tmp: RunCollatz
-	./RunCollatz < RunCollatz.in > RunCollatz.tmp
-	diff RunCollatz.tmp RunCollatz.out
+RunVoting.tmp: RunVoting
+	./RunVoting < RunVoting.in > RunVoting.tmp
+	diff RunVoting.tmp RunVoting.out
 
-TestCollatz: Collatz.h Collatz.c++ TestCollatz.c++
-	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) Collatz.c++ TestCollatz.c++ -o TestCollatz $(LDFLAGS)
+TestVoting: Voting.h Voting.c++ TestVoting.c++
+	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) Voting.c++ TestVoting.c++ -o TestVoting $(LDFLAGS)
 
-TestCollatz.tmp: TestCollatz
-	$(VALGRIND) ./TestCollatz                                       >  TestCollatz.tmp 2>&1
-	$(GCOV) -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"     >> TestCollatz.tmp
-	$(GCOV) -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'" >> TestCollatz.tmp
-	cat TestCollatz.tmp
+TestVoting.tmp: TestVoting
+	$(VALGRIND) ./TestVoting                                       >  TestVoting.tmp 2>&1
+	$(GCOV) -b Voting.c++     | grep -A 5 "File 'Voting.c++'"     >> TestVoting.tmp
+	$(GCOV) -b TestVoting.c++ | grep -A 5 "File 'TestVoting.c++'" >> TestVoting.tmp
+	cat TestVoting.tmp
