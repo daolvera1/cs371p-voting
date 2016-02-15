@@ -1,5 +1,5 @@
 // ----------------------------
-// projects/collatz/Collatz.c++
+// projects/voting/Collatz.c++
 // Copyright (C) 2016
 // Glenn P. Downing
 // ----------------------------
@@ -16,18 +16,14 @@
 #include <vector>
 #include "Voting.h"
 
-#define fast 0
-
 using namespace std;
 
 // ------------
-// collatz_read
+// voting_read
 // ------------
-#ifdef fast
-vector<int> cache (1000001, 0);
-#endif
 
-pair<int, int> collatz_read (const string& s) {
+
+pair<int, int> voting_read (const string& s) {
     istringstream sin(s);
     int i;
     int j;
@@ -66,9 +62,9 @@ int get_length(int n){
 }
 
 // ------------
-// collatz_eval
+// voting_eval
 // ------------
-int collatz_eval (int i, int j) {
+int voting_eval (int i, int j) {
     // <your code>
 
     int max = 1, val = 0;
@@ -107,32 +103,32 @@ int collatz_eval (int i, int j) {
 
 
 // -------------
-// collatz_print
+// voting_print
 // -------------
 
-void collatz_print (ostream& w, int i, int j, int v) {
+void voting_print (ostream& w, int i, int j, int v) {
     w << i << " " << j << " " << v << endl;
 }
 
 // -------------
-// collatz_solve
+// voting_solve
 // -------------
 
-void collatz_solve (istream& r, ostream& w) {
+void voting_solve (istream& r, ostream& w) {
     string s;
     getline(r, s);
     istringstream sin(s); //get test cases
     int test_cases;
     sin >> test_cases;
     cout  << "number of test cases: " << test_cases <<endl;
-    
+
 
 
 /* while (getline(r, s)) {
-        const pair<int, int> p = collatz_read(s);
+        const pair<int, int> p = voting_read(s);
         const int            i = p.first;
         const int            j = p.second;
-        const int            v = collatz_eval(i, j);
-        collatz_print(w, i, j, v);
+        const int            v = voting_eval(i, j);
+        voting_print(w, i, j, v);
     }*/
 }
