@@ -35,6 +35,9 @@ public:
     Candidate (string s){name = s;} //constructor
     void add_ballot(vector<int> v){ballot_box.push_back(v);} //adds ballot to their ballot box
     vector<vector<int>> get_box(){return ballot_box;}
+    int number_votes(){
+        int size = ballot_box.size();
+        return size;}
     string get_name(){return name;} //dont know if need this
     bool operator<(const Candidate &other) const{
         return ballot_box.size() < ballot_box.size();
@@ -154,9 +157,36 @@ int num_testcases_candidates(const string& s){
 
 
 
+vector<Candidate> ballot_counter(vector<Candidate>& _box, const int total_ballots){
+    vector<Candidate> winners;
+    int tied = 1, num_cand=_box.size();
+    while (1){
+        //check if any candidates have over 50%
+        for(int i = 0; i < num_cand; i++){
+            Candidate cand = _box.at(i);
+            if(cand.number_votes() * 1.0 / total_ballots > .5){
+               winners.push_back(cand);
+
+            } 
+            else if(i > 0 && cand.number_votes() != _box.at(i - 1).number_votes())
+                tied = 0;
+        }
+
+        if(!winners.empty()) {return winners;}
+
+        //check if all candidates have equal votes
+        else if(tied){return _box;}
+
+        else {return winners;}
+    }
+} 
+
+
+
 void voting_solve (istream& r, ostream& w) {
     string s;
     getline(r, s);
+    int count;
     const int number_tests = num_testcases_candidates(s);
     for(int tests = 0; tests < number_tests ; tests++){
             
@@ -182,6 +212,7 @@ void voting_solve (istream& r, ostream& w) {
 					break;
 				else { 
 					ballots = voting_read(s); // parse ballot into vector
+                    count++;
                     int candidate_number = ballots.front();
 
 					_candidates.at(candidate_number - 1).add_ballot(ballots); //add ballot to apprioriate candidate box
@@ -189,12 +220,15 @@ void voting_solve (istream& r, ostream& w) {
             }
 
             sort(_candidates.begin(), _candidates.end());
-            cout << "WINNER " << _candidates.front().get_name();
+
+            vector<Candidate> winner = ballot_counter(_candidates,count);
+            int num_win = winner.size();
+            for(int i = 0; i < num_win; i++){
+                cout << "printing winner " << winner.at(i).get_name();
+            }
             //voting_print();
 
     }
-
-
 
 /* while (getline(r, s)) {
         const pair<int, int> p = voting_read(s);
