@@ -36,7 +36,9 @@ public:
     void add_ballot(vector<int> v){ballot_box.push_back(v);} //adds ballot to their ballot box
     vector<vector<int>> get_box(){return ballot_box;}
     string get_name(){return name;} //dont know if need this
-
+    bool operator<(const Candidate &other) const{
+        return ballot_box.size() < ballot_box.size();
+    }
 };
 
 vector<int> voting_read (const string& s) {
@@ -122,6 +124,7 @@ int voting_eval (int i, int j) {
             max = val;
         }
 	}
+
     return max;
 
 }
@@ -172,7 +175,7 @@ void voting_solve (istream& r, ostream& w) {
                 Candidate cand(s);	
                 _candidates.push_back(cand); //add candidate into vector of candidates	
             } 
-            
+
 			vector<int> ballots;
             while(getline(r,s)){
 				if(s.empty()) 
@@ -185,6 +188,9 @@ void voting_solve (istream& r, ostream& w) {
 				}
             }
 
+            sort(_candidates.begin(), _candidates.end());
+            cout << "WINNER " << _candidates.front().get_name();
+            //voting_print();
 
     }
 
