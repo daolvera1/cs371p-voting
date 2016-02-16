@@ -8,47 +8,73 @@
 // includes
 // --------
 
+
+#include <iterator>  // iterate vector
+#include <algorithm>  // print vector
 #include <cassert>  // assert
 #include <iostream> // endl, istream, ostream
+#include <fstream> // endl, istream, ostream
 #include <sstream>  // istringstream
 #include <string>   // getline, string
 #include <utility>  // make_pair, pair
-#include <vector>
+#include <vector>   //vector
 #include "Voting.h"
 
 using namespace std;
-
+//vecto> names;
 // ------------
 // voting_read
 // ------------
 
+class Candidate 
+{
+private:
+    string name;
+    vector<vector<int>> ballot_box;
+public:
+    Candidate (string s){name = s;} //constructor
+    void add_ballot(vector<int> v){ballot_box.push_back(v);} //adds ballot to their ballot box
+    vector<vector<int>> get_box(){return ballot_box;}
+    string get_name(){return name;} //dont know if need this
 
-pair<int, int> voting_read (const string& s) {
-    istringstream sin(s);
-    int i;
+};
+
+vector<int> voting_read (const string& s) {
+    vector<int> ballot;
+	istringstream sin(s);
+    /*int i;
     int j;
-    sin >> i >> j;
-    return make_pair(i, j);
+    int k;
+    int l;
+    sin >> i >> j >> k >> l;
+	ballot.push_back(i);
+	ballot.push_back(j);
+	ballot.push_back(k);
+	ballot.push_back(l);*/
+    int i;	
+	while(sin >> i)
+		ballot.push_back(i);
+    return ballot;
 }
-
+/*
 // ------------
 // get_length
 // ------------
 int get_length(int n){
     assert(n > 0);
-  
+
     int cycle = 1;
         while ( n > 1 ){
 
             #ifdef fast
-    		if( n < 1000000 && cache.at(n) > 0){   
+    		if( n < 1000000 && cache.at(n) > 0){
                 return cache.at(n) + cycle -1;
             }
             #endif
 
             if(n % 2 == 0){
                 n=n/2;
-            } 
+            }
     		else {
                 n=3*n+1;
             }
@@ -60,7 +86,7 @@ int get_length(int n){
 
     return cycle;
 }
-
+*/
 // ------------
 // voting_eval
 // ------------
@@ -76,11 +102,11 @@ int voting_eval (int i, int j) {
         low = j;
         high = i;}
     for (int temp = low ; temp <= high; temp++){ //iterate through the range of values (i.e. 1 10)
-      
+
        #ifdef fast
         if (cache.at(temp) > 0){ //if value previously cached, do lookup
 			val = cache.at(temp);
-        } 
+        }
         else { //if value isn't in cache, find cycle length and cache it
             val = get_length(temp);
             cache.at(temp)=val;
@@ -88,7 +114,7 @@ int voting_eval (int i, int j) {
         #endif
 
         #ifndef fast
-        val = get_length(temp);
+       // val = get_length(temp);
         #endif
 
 
@@ -97,7 +123,7 @@ int voting_eval (int i, int j) {
         }
 	}
     return max;
-	
+
 }
 
 
@@ -112,15 +138,58 @@ void voting_print (ostream& w, int i, int j, int v) {
 
 // -------------
 // voting_solve
-// -------------
+//
+
+int num_testcases_candidates(const string& s){
+
+    istringstream sin(s);
+    int num_testcases;
+    sin >> num_testcases;
+    return num_testcases;
+
+}
+
+
 
 void voting_solve (istream& r, ostream& w) {
     string s;
     getline(r, s);
-    istringstream sin(s); //get test cases
-    int test_cases;
-    sin >> test_cases;
-    cout  << "number of test cases: " << test_cases <<endl;
+    const int number_tests = num_testcases_candidates(s);
+    for(int tests = 0; tests < number_tests ; tests++){
+            
+            if (tests == 0) 
+				getline(r,s); //skip empty line
+
+            getline(r,s); //num candidates
+
+            const int number_candidates = num_testcases_candidates(s);
+            vector<Candidate> _candidates;
+            //getting names of candidates
+            for (int i = 0;i < number_candidates; i++){
+
+                getline(r,s); // get candidate names
+				//names.push_back(s);	
+                Candidate cand(s);	
+                _candidates.push_back(cand); //add candidate into vector of candidates	
+            } 
+            // testing names
+            /*
+            for (int i = 0 ; i < number_candidates; i++){
+                cout << "testing names: " << _candidates.at(i).get_name() << endl;
+            }*/
+			vector<int> ballots;
+            while(getline(r,s)){
+				if(s.empty()) 
+					break;
+				else { 
+					ballots = voting_read(s); // send ballots into vector
+                    //copy(ballots.begin(), ballots.end(), ostream_iterator<int>(cout, " \n"));
+                    //out << "printint ballots: " << s << endl;
+					
+				}
+            }
+
+    }
 
 
 

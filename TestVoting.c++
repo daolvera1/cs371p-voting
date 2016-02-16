@@ -29,133 +29,21 @@ using namespace std;
 // read
 // ----
 
-/*TEST(VotingFixture, read_1) {
-    string s("1 10\n");
-    const pair<int, int> p = voting_read(s);
-    ASSERT_EQ( 1, p.first);
-    ASSERT_EQ(10, p.second);}
-
-TEST(VotingFixture, read_2) {
-    string s("252 525\n");
-    const pair<int, int> p = voting_read(s);
-    ASSERT_EQ(252, p.first);
-    ASSERT_EQ(525, p.second);}
-
-TEST(VotingFixture, read_3) {
-    string s("1 100\n");
-    const pair<int, int> p = voting_read(s);
-    ASSERT_EQ( 1, p.first);
-    ASSERT_EQ(100, p.second);}
-
-TEST(VotingFixture, read_4) {
-    string s("555 565\n");
-    const pair<int, int> p = voting_read(s);
-    ASSERT_EQ( 555, p.first);
-    ASSERT_EQ(565, p.second);}
-
-// ----
-// eval
-// ----
-
-TEST(VotingFixture, eval_1) {
-    const int v = voting_eval(1, 10);
-    ASSERT_EQ(20, v);}
-
-TEST(VotingFixture, eval_2) {
-    const int v = voting_eval(100, 200);
-    ASSERT_EQ(125, v);}
-
-TEST(VotingFixture, eval_3) {
-    const int v = voting_eval(201, 210);
-    ASSERT_EQ(89, v);}
-
-TEST(VotingFixture, eval_4) {
-    const int v = voting_eval(900, 1000);
-    ASSERT_EQ(174, v);}
-
-TEST(VotingFixture, eval_5) {
-    const int v = voting_eval(10, 1);
-    ASSERT_EQ(20, v);}
-
-TEST(VotingFixture, eval_6) {
-    const int v = voting_eval(1, 1);
-    ASSERT_EQ(1, v);}
-
-TEST(VotingFixture, eval_7) {
-    const int v = voting_eval(5, 4);
-    ASSERT_EQ(6, v);}
-
-
-// -----
-// get_length
-// -----
-
-TEST(VotingFixture, len_1) {
-    const int v = get_length(10);
-    ASSERT_EQ(7, v);}
-
-TEST(VotingFixture, len_2) {
-    const int v = get_length(1);
-    ASSERT_EQ(1, v);}
-
-TEST(VotingFixture, len_3) {
-    const int v = get_length(232);
-    ASSERT_EQ(22, v);}
-
-
-// -----
-// print
-// -----
-
-TEST(VotingFixture, print_1) {
-    ostringstream w;
-    voting_print(w, 1, 10, 20);
-    ASSERT_EQ("1 10 20\n", w.str());}
-
-TEST(VotingFixture, print_2) {
-    ostringstream w;
-    voting_print(w, 3, 4, 8);
-    ASSERT_EQ("3 4 8\n", w.str());}
-
-TEST(VotingFixture, print_3) {
-    ostringstream w;
-    voting_print(w, 2, 100, 119);
-    ASSERT_EQ("2 100 119\n", w.str());}
-
-TEST(VotingFixture, print_4) {
-    ostringstream w;
-    voting_print(w, 5, 4, 6);
-    ASSERT_EQ("5 4 6\n", w.str());}*/
-
-// -----
-// solve
-// -----
-/*
-TEST(VotingFixture, solve_1) {
-   // istringstream r("1 10\n100 200\n201 210\n900 1000\n1000 1632");
-    istringstream r("1 10\n100 200\n201 210\n900 1000");
-    ostringstream w;
-    voting_solve(r, w);
-    ASSERT_EQ("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n", w.str());}
-
- TEST(VotingFixture, solve_2) {
-   // istringstream r("1 10\n100 200\n201 210\n900 1000\n1000 1632");
-    istringstream r("2 2\n3 3\n2 100\n4 5");
-    ostringstream w;
-    voting_solve(r, w);
-    ASSERT_EQ("2 2 2\n3 3 8\n2 100 119\n4 5 6\n", w.str());}
-TEST(VotingFixture, solve_3) {
-   // istringstream r("1 10\n100 200\n201 210\n900 1000\n1000 1632");
-    istringstream r("621 126\n423 621\n333 333\n1 100");
-    ostringstream w;
-    voting_solve(r, w);
-    ASSERT_EQ("621 126 144\n423 621 142\n333 333 113\n1 100 119\n", w.str());}
-TEST(VotingFixture, solve_4) {
-   // istringstream r("1 10\n100 200\n201 210\n900 1000\n1000 1632");
-    istringstream r("100 1\n123 256\n741 6\n845 963");
-    ostringstream w;
-    voting_solve(r, w);
-    ASSERT_EQ("100 1 119\n123 256 128\n741 6 171\n845 963 179\n", w.str());}   */
+TEST(num_testcases_test, read_1) {
+    string s("0\n");
+    const int p = num_testcases_candidates(s);
+    ASSERT_EQ( p, 0);
+}
+TEST(num_testcases_test, read_2) {
+    string s("1\n");
+    const int p = num_testcases_candidates(s);
+    ASSERT_EQ( p, 1);
+}
+TEST(num_testcases_test, read_3) {
+    string s("100\n");
+    const int p = num_testcases_candidates(s);
+    ASSERT_EQ( p, 100);
+}
 
 /*
 % g++ -fprofile-arcs -ftest-coverage -pedantic -std=c++11 -Wall Voting.c++ TestVoting.c++ -o TestVoting -lgtest -lgtest_main -lpthread

@@ -14,6 +14,8 @@
 #include <iostream> // istream, ostream
 #include <string>   // string
 #include <utility>  // pair
+#include <vector>  // vector
+
 
 using namespace std;
 
@@ -26,7 +28,7 @@ using namespace std;
  * @param s a string
  * @return a pair of ints, representing the beginning and end of a range, [i, j]
  */
-pair<int, int> voting_read (const string& s);
+vector<int> voting_read (const string& s);
 
 // ------------
 // voting_eval
@@ -47,7 +49,7 @@ int voting_eval (int i, int j);
  * @param i the beginning of the range, 1 - 1000000
  * @return cycle length of i
  */
-int get_length (int i);
+//int get_length (int i);
 
 // -------------
 // voting_print
@@ -71,5 +73,5 @@ void voting_print (ostream& w, int i, int j, int v);
  * @param w an ostream
  */
 void voting_solve (istream& r, ostream& w);
-
+int num_testcases_candidates(const string& s);
 #endif // Voting_h
