@@ -172,22 +172,19 @@ void voting_solve (istream& r, ostream& w) {
                 Candidate cand(s);	
                 _candidates.push_back(cand); //add candidate into vector of candidates	
             } 
-            // testing names
-            /*
-            for (int i = 0 ; i < number_candidates; i++){
-                cout << "testing names: " << _candidates.at(i).get_name() << endl;
-            }*/
+            
 			vector<int> ballots;
             while(getline(r,s)){
 				if(s.empty()) 
 					break;
 				else { 
-					ballots = voting_read(s); // send ballots into vector
-                    //copy(ballots.begin(), ballots.end(), ostream_iterator<int>(cout, " \n"));
-                    //out << "printint ballots: " << s << endl;
-					
+					ballots = voting_read(s); // parse ballot into vector
+                    int candidate_number = ballots.front();
+
+					_candidates.at(candidate_number - 1).add_ballot(ballots); //add ballot to apprioriate candidate box
 				}
             }
+
 
     }
 
