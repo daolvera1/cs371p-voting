@@ -26,11 +26,12 @@ using namespace std;
 // voting_read
 // ------------
 
-class Candidate 
+class Candidate
 {
 private:
     string name;
     vector<vector<int>> ballot_box;
+    bool loser = false;
 public:
     Candidate (string s){name = s;} //constructor
     void add_ballot(vector<int> v){ballot_box.push_back(v);} //adds ballot to their ballot box
@@ -42,56 +43,19 @@ public:
     bool operator<(const Candidate &other) const{
         return ballot_box.size() < ballot_box.size();
     }
+    void make_loser(){loser = true;}
+    bool check_lower(){return loser;}
 };
 
 vector<int> voting_read (const string& s) {
     vector<int> ballot;
 	istringstream sin(s);
-    /*int i;
-    int j;
-    int k;
-    int l;
-    sin >> i >> j >> k >> l;
-	ballot.push_back(i);
-	ballot.push_back(j);
-	ballot.push_back(k);
-	ballot.push_back(l);*/
-    int i;	
+    int i;
 	while(sin >> i)
 		ballot.push_back(i);
     return ballot;
 }
-/*
-// ------------
-// get_length
-// ------------
-int get_length(int n){
-    assert(n > 0);
 
-    int cycle = 1;
-        while ( n > 1 ){
-
-            #ifdef fast
-    		if( n < 1000000 && cache.at(n) > 0){
-                return cache.at(n) + cycle -1;
-            }
-            #endif
-
-            if(n % 2 == 0){
-                n=n/2;
-            }
-    		else {
-                n=3*n+1;
-            }
-            cycle++;
-
-        }
-
-    assert(cycle > 0);
-
-    return cycle;
-}
-*/
 // ------------
 // voting_eval
 // ------------
@@ -131,9 +95,6 @@ int voting_eval (int i, int j) {
     return max;
 
 }
-
-
-
 // -------------
 // voting_print
 // -------------
@@ -155,21 +116,31 @@ int num_testcases_candidates(const string& s){
 
 }
 
-
-
 vector<Candidate> ballot_counter(vector<Candidate>& _box, const int total_ballots){
     vector<Candidate> winners;
-    int tied = 1, num_cand=_box.size();
+    int tied = 1, num_cand=_box.size(), round = 0;
+    for(int i = 0; i < num_cand; i++){
+
+      cout << "Getting number votes: " << _box.at(i).number_votes() << endl;
+    }
     while (1){
         //check if any candidates have over 50%
+        int min = _box.at(0).number_votes(); // set min number votes to max
+        int index_memory = 0;
         for(int i = 0; i < num_cand; i++){
             Candidate cand = _box.at(i);
-            if(cand.number_votes() * 1.0 / total_ballots > .5){
+            cout << double (cand.number_votes())  / total_ballots << endl;
+            if((double (cand.number_votes()) / total_ballots )> .5){
                winners.push_back(cand);
-
-            } 
+            }
             else if(i > 0 && cand.number_votes() != _box.at(i - 1).number_votes())
                 tied = 0;
+
+            //find min number of votes
+            if(cand.number_votes() < min){
+                min = cand.number_votes();
+                index_memory = i;
+            }
         }
 
         if(!winners.empty()) {return winners;}
@@ -177,20 +148,30 @@ vector<Candidate> ballot_counter(vector<Candidate>& _box, const int total_ballot
         //check if all candidates have equal votes
         else if(tied){return _box;}
 
-        else {return winners;}
+        else  //eliminate losers
+        {
+            for(int i = index_memory; i < num_cand; ++i){
+                if(_box.at(i).number_votes() == min) //remove candidates
+                    vector<int> removed_ballot = _box.at(i).get_box();
+                    cout << "removing Candidate " << _box.at(i).get_name() << "\n\n" << endl;
+                    _box.erase(i);
+            }
+        }
+
+          return winners;
     }
-} 
+}
 
 
 
 void voting_solve (istream& r, ostream& w) {
     string s;
     getline(r, s);
-    int count;
+    int count = 0;
     const int number_tests = num_testcases_candidates(s);
     for(int tests = 0; tests < number_tests ; tests++){
-            
-            if (tests == 0) 
+
+            if (tests == 0)
 				getline(r,s); //skip empty line
 
             getline(r,s); //num candidates
@@ -201,24 +182,23 @@ void voting_solve (istream& r, ostream& w) {
             for (int i = 0;i < number_candidates; i++){
 
                 getline(r,s); // get candidate names
-				//names.push_back(s);	
-                Candidate cand(s);	
-                _candidates.push_back(cand); //add candidate into vector of candidates	
-            } 
+				//names.push_back(s);
+                Candidate cand(s);
+                _candidates.push_back(cand); //add candidate into vector of candidates
+            }
 
 			vector<int> ballots;
             while(getline(r,s)){
-				if(s.empty()) 
+				if(s.empty())
 					break;
-				else { 
+				else {
 					ballots = voting_read(s); // parse ballot into vector
                     count++;
                     int candidate_number = ballots.front();
 
 					_candidates.at(candidate_number - 1).add_ballot(ballots); //add ballot to apprioriate candidate box
 				}
-            }
-
+          }
             sort(_candidates.begin(), _candidates.end());
 
             vector<Candidate> winner = ballot_counter(_candidates,count);
