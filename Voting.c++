@@ -121,19 +121,18 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
     vector<Candidate*> winners;
     int tied = 1, num_cand=_box.size();
     int index_memory = 0, round = 0;
-    for(int i = 0; i < num_cand; i++){
-
-      //cout << "Getting number votes: " << _box.at(i) -> number_votes() << endl;
-    }
+	cout << "total ballot : " << total_ballots << endl;
     while (1){
         //check if any candidates have over 50%
         int min = _box.at(0)->number_votes(); // set min number votes to max
+		tied = 1;
         for(int i = 0; i < num_cand; i++){
-		    tied = 1;
             Candidate* cand = _box.at(i);
-            //cout << double (cand->number_votes())  / total_ballots << endl;
+            cout << double (cand->number_votes())  / total_ballots << 
+			" " << _box.at(i)->get_name() << endl;
             if((double (cand->number_votes()) / total_ballots )> .5){
                winners.push_back(cand);
+               //cout << "printing winner " << _box.at(i)->get_name()  << endl;
             }
             else if(i > 0 && cand->number_votes() != _box.at(i - 1)->number_votes())
                 tied = 0;
@@ -156,7 +155,7 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
             for(int i = num_cand - 1; i >=index_memory; --i){
                 if(_box.at(i)->number_votes() == min) //remove candidates who meet the min number of votes{
                     {vector<vector<int>> removed_ballot = _box.at(i)->get_box(); //get their ballots
-                    //cout << "removing Candidate " << _box.at(i)->get_name() << "\n\n" << endl;
+                    cout << "removing Candidate " << _box.at(i)->get_name()  << endl;
 					_box.at(i) -> make_loser();
 
                     _box.erase(_box.begin() + i);
@@ -166,7 +165,10 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
 					for(int i = 0; i < size ; i++){
 						///assert(0);
 						int alternate_vote = removed_ballot.at(i).at(round + 1); //number oging to be 1 bigger
-						//cout << "printing alt vote " << alternate_vote << endl;
+
+						cout << "printing alt vote " << alternate_vote << " goes to " << 
+						_original_box.at(alternate_vote - 1) -> get_name() << "\n\n"; 
+
 						_original_box.at(alternate_vote - 1)->add_ballot(removed_ballot.at(i));
 						//assert(_original_box.at(alternate_vote - 1) -> number_votes() == ((_box.at(alternate_vote - 1) -> number_votes()) - 1));
 
@@ -195,7 +197,7 @@ void voting_solve (istream& r, ostream& w) {
     int count = 0;
     const int number_tests = num_testcases_candidates(s);
     for(int tests = 0; tests < number_tests ; tests++){
-
+			count = 0;
             if (tests == 0)
 				getline(r,s); //skip empty line
 
@@ -216,6 +218,7 @@ void voting_solve (istream& r, ostream& w) {
 					break;
 				else {
 					ballots = voting_read(s); // parse ballot into vector
+					//cout << "printing balllot " << s << endl;
                     count++;
                     int candidate_number = ballots.front();
 
@@ -233,17 +236,19 @@ void voting_solve (istream& r, ostream& w) {
 				return c1 -> number_votes() > c2->number_votes();});
 
             
-
+			//cout << "confirming count " << count << endl;
             vector<Candidate*> winner = ballot_counter(copy_cand,count, _candidates);
-            int num_win = winner.size();
-            for(int i = 0; i < num_win; i++){
+            //int num_win = winner.size();
+            for(int i = 0; i < number_candidates; i++){
                 //cout << "printing winner " << winner.at(i)->get_name() << endl;
+				//cout << winner.at(i) -> check_loser() << endl;
 				//cout << "testing boolean " << _candidates.at(i) ->check_loser() << endl;
 				if (_candidates.at(i) -> check_loser() == false )
-                //cout << "printing winner " << _candidates.at(i)->get_name() << endl;
-                cout << i+1 << endl;
+                cout <<  _candidates.at(i)->get_name() << endl;
+                //cout << i+1 << endl;
             }
             //voting_print();
+			cout << "\n";
 
     }
 
