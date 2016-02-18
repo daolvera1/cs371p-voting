@@ -25,17 +25,32 @@ using namespace std;
 // ------------
 // voting_read
 // ------------
+# define DEBUG 0
 
+class Ballot {
+private:
+    vector<int> votes;
+    int pref = 0;
+public: 
+    Ballot(vector<int>& v){
+        votes = v;
+    }
+    void write_ballot(vector<int>& v){
+        votes = v;  
+    }
+    int get_alternate(){return votes.at(++pref);}
+};
 class Candidate
 {
 private:
     string name;
-    vector<Ballot> ballot_box;
+    vector<Ballot*> ballot_box;
     bool loser = false;
+    bool wins = false;
 public:
     Candidate (string s){name = s;} //constructor
-    void add_ballot(vector<Ballot> v){ballot_box.push_back(v);} //adds ballot to their ballot box
-    vector<Ballot> get_box(){return ballot_box;}
+    void add_ballot(Ballot* v){ballot_box.push_back(v);} //adds ballot to their ballot box
+    vector<Ballot*> get_box(){return ballot_box;}
     int number_votes(){
         int size = ballot_box.size();
         return size;}
@@ -45,6 +60,8 @@ public:
     }
     void make_loser(){loser = true;}
     bool check_loser(){return loser;}
+    bool check_winner(){return wins;}
+    void make_winner(){wins = true;}
 };
 
 vector<int> voting_read (const string& s) {
@@ -56,16 +73,6 @@ vector<int> voting_read (const string& s) {
     return ballot;
 }
 
-class Ballot {
-private:
-	vector<int> votes;
-	int pref = 0;
-public: 
-	void write_ballot(vector<int>& v){
-		votes = v;	
-	}
-	void get_alternate(){return votes.at(++pref);}
-};
 
 // ------------
 // voting_eval
@@ -132,21 +139,33 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
     vector<Candidate*> winners;
     int tied = 1, num_cand=_box.size();
     int index_memory = 0, round = 0;
+    #if(DEBUG)
 	cout << "total ballot : " << total_ballots << endl;
+    #endif
     while (1){
         //check if any candidates have over 50%
         int min = _box.at(0)->number_votes(); // set min number votes to max
 		tied = 1;
         for(int i = 0; i < num_cand; i++){
+            
             Candidate* cand = _box.at(i);
+
+            #if(DEBUG)
             cout << double (cand->number_votes())  / total_ballots << 
 			" " << _box.at(i)->get_name() << endl;
+            #endif
+
             if((double (cand->number_votes()) / total_ballots )> .5){
+               cand -> make_winner();
                winners.push_back(cand);
-               //cout << "printing winner " << _box.at(i)->get_name()  << endl;
+
+               #if(DEBUG)
+               cout << "getting pushed to winner " << _box.at(i)->get_name()  << endl;
+               #endif
+
             }
-            else if(i > 0 && cand->number_votes() != _box.at(i - 1)->number_votes())
-                tied = 0;
+            else if(i > 0 && cand->number_votes() != _box.at(i - 1)->number_votes()){
+                tied = 0;}
 
             //find min number of votes
             if(cand->number_votes() < min){
@@ -158,15 +177,23 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
         if(!winners.empty()) {return winners;}
 
         //check if all candidates have equal votes
-        else if(tied){return _box;}
+        else if(tied){
+
+            for(int i = 0; i < (int)_box.size(); i++){
+                _box.at(i) -> make_winner();
+            }
+
+            return _box;}
 
         else  //eliminate losers
         {
 			//cout << "starting index: " << index_memory <<  " , min " << min << endl;
             for(int i = num_cand - 1; i >=index_memory; --i){
                 if(_box.at(i)->number_votes() == min) //remove candidates who meet the min number of votes{
-                    {vector<Ballot> removed_ballot = _box.at(i)->get_box(); //get their ballots
+                    {vector<Ballot*> removed_ballot = _box.at(i)->get_box(); //get their ballots
+                    #if(DEBUG)
                     cout << "removing Candidate " << _box.at(i)->get_name()  << endl;
+                    #endif
 					_box.at(i) -> make_loser();
 
                     _box.erase(_box.begin() + i);
@@ -175,12 +202,18 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
 					//cout << "getting size " << size << endl;
 					for(int i = 0; i < size ; i++){
 						///assert(0);
-						int alternate_vote = removed_ballot.at(i).at(round + 1); //number oging to be 1 bigger
+						int alternate_vote = removed_ballot.at(i) -> get_alternate(); //number oging to be 1 bigger
 
-						cout << "printing alt vote " << alternate_vote << " goes to " << 
+                        while(_original_box.at(alternate_vote - 1) -> check_loser() == true || 
+                           _original_box.at(alternate_vote - 1) -> number_votes() == min ){
+                               alternate_vote = removed_ballot.at(i) -> get_alternate();}
+                        #if(DEBUG)
+						cout << "val of alt vote: " << alternate_vote << " goes to " << 
 						_original_box.at(alternate_vote - 1) -> get_name() << "\n\n"; 
-
+                        #endif
 						_original_box.at(alternate_vote - 1)->add_ballot(removed_ballot.at(i));
+                      //  if(_original_box.at(alternate_vote - 1 ) -> check_loser() == true)
+                            //_box.push_back(_original_box.at(alternate_vote - 1));
 						//assert(_original_box.at(alternate_vote - 1) -> number_votes() == ((_box.at(alternate_vote - 1) -> number_votes()) - 1));
 
 								
@@ -211,6 +244,8 @@ void voting_solve (istream& r, ostream& w) {
 			count = 0;
             if (tests == 0)
 				getline(r,s); //skip empty line
+            else 
+                cout << "\n";
 
             getline(r,s); //num candidates
 
@@ -233,7 +268,7 @@ void voting_solve (istream& r, ostream& w) {
                     count++;
                     int candidate_number = ballots.front();
 
-					_candidates.at(candidate_number - 1)->add_ballot(ballots); //add ballot to apprioriate candidate box
+					_candidates.at(candidate_number - 1)->add_ballot(new Ballot(ballots)); //add ballot to apprioriate candidate box
 				}
           }
 			vector<Candidate*> copy_cand;
@@ -254,12 +289,13 @@ void voting_solve (istream& r, ostream& w) {
                 //cout << "printing winner " << winner.at(i)->get_name() << endl;
 				//cout << winner.at(i) -> check_loser() << endl;
 				//cout << "testing boolean " << _candidates.at(i) ->check_loser() << endl;
-				if (_candidates.at(i) -> check_loser() == false )
-                cout <<  _candidates.at(i)->get_name() << endl;
+				if (_candidates.at(i) -> check_winner() == true )
+                cout <<_candidates.at(i)->get_name() << endl;
                 //cout << i+1 << endl;
             }
             //voting_print();
-			cout << "\n";
+
+			
 
     }
 
