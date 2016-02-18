@@ -30,16 +30,6 @@ using namespace std;
  */
 vector<int> voting_read (const string& s);
 
-// ------------
-// voting_eval
-// ------------
-
-/**
- * @param i the beginning of the range, inclusive
- * @param j the end       of the range, inclusive
- * @return the max cycle length of the range [i, j]
- */
-int voting_eval (int i, int j);
 
 // ------------
 // voting_eval

@@ -74,45 +74,6 @@ vector<int> voting_read (const string& s) {
 }
 
 
-// ------------
-// voting_eval
-// ------------
-int voting_eval (int i, int j) {
-    // <your code>
-
-    int max = 1, val = 0;
-    int low = 0, high = 0;
-    if(i < j){
-        low = i;
-        high = j;
-    } else {
-        low = j;
-        high = i;}
-    for (int temp = low ; temp <= high; temp++){ //iterate through the range of values (i.e. 1 10)
-
-       #ifdef fast
-        if (cache.at(temp) > 0){ //if value previously cached, do lookup
-			val = cache.at(temp);
-        }
-        else { //if value isn't in cache, find cycle length and cache it
-            val = get_length(temp);
-            cache.at(temp)=val;
-        }
-        #endif
-
-        #ifndef fast
-       // val = get_length(temp);
-        #endif
-
-
-        if(val > max){ //finding max cycle length
-            max = val;
-        }
-	}
-
-    return max;
-
-}
 // -------------
 // voting_print
 // -------------
