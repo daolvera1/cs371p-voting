@@ -30,12 +30,12 @@ class Candidate
 {
 private:
     string name;
-    vector<vector<int>> ballot_box;
+    vector<Ballot> ballot_box;
     bool loser = false;
 public:
     Candidate (string s){name = s;} //constructor
-    void add_ballot(vector<int> v){ballot_box.push_back(v);} //adds ballot to their ballot box
-    vector<vector<int>> get_box(){return ballot_box;}
+    void add_ballot(vector<Ballot> v){ballot_box.push_back(v);} //adds ballot to their ballot box
+    vector<Ballot> get_box(){return ballot_box;}
     int number_votes(){
         int size = ballot_box.size();
         return size;}
@@ -55,6 +55,17 @@ vector<int> voting_read (const string& s) {
 		ballot.push_back(i);
     return ballot;
 }
+
+class Ballot {
+private:
+	vector<int> votes;
+	int pref = 0;
+public: 
+	void write_ballot(vector<int>& v){
+		votes = v;	
+	}
+	void get_alternate(){return votes.at(++pref);}
+};
 
 // ------------
 // voting_eval
@@ -154,7 +165,7 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
 			//cout << "starting index: " << index_memory <<  " , min " << min << endl;
             for(int i = num_cand - 1; i >=index_memory; --i){
                 if(_box.at(i)->number_votes() == min) //remove candidates who meet the min number of votes{
-                    {vector<vector<int>> removed_ballot = _box.at(i)->get_box(); //get their ballots
+                    {vector<Ballot> removed_ballot = _box.at(i)->get_box(); //get their ballots
                     cout << "removing Candidate " << _box.at(i)->get_name()  << endl;
 					_box.at(i) -> make_loser();
 
