@@ -182,21 +182,21 @@ TEST(voting_solve_test, voting_solve_1) {
     ostringstream w;
     istringstream r ("1\n\n2\nA\nB\n1 2\n1 2\n1 2");
     voting_solve(r,w);
-    ASSERT_EQ("A\n", w.str());
+    ASSERT_EQ("A", w.str());
 }
 
 TEST(voting_solve_test, voting_solve_2) {
     ostringstream w;
     istringstream r ("1\n\n1\nA\n1\n1\n1");
     voting_solve(r,w);
-    ASSERT_EQ("A\n", w.str());
+    ASSERT_EQ("A", w.str());
 }
 
 TEST(voting_solve_test, voting_solve_3) {
     ostringstream w;
     istringstream r ("1\n\n2\nA\nB\n2 1\n1 2\n2 1");
     voting_solve(r,w);
-    ASSERT_EQ("B\n", w.str());
+    ASSERT_EQ("B", w.str());
 }
 
 
@@ -207,17 +207,17 @@ TEST(voting_solve_test, voting_solve_3) {
 
 TEST(voting_print_test, print_1) {
     ostringstream w;
-    voting_print(w, "a");
+    voting_print(w, "a", false);
     ASSERT_EQ("a\n", w.str());
 }
 TEST(voting_print_test, print_name) {
     ostringstream w;
-    voting_print(w, "Daniel Olvera");
+    voting_print(w, "Daniel Olvera", false);
     ASSERT_EQ("Daniel Olvera\n", w.str());
 }
 TEST(voting_print_test, print_long_name) {
     ostringstream w;
-    voting_print(w, "testing voting_print_test");
+    voting_print(w, "testing voting_print_test", false);
     ASSERT_EQ("testing voting_print_test\n", w.str());
 }
 

@@ -78,7 +78,7 @@ vector<int> voting_read (const string& s);
  * @param j the end       of the range, inclusive
  * @param v the max cycle length
  */
-void voting_print (ostream& w, string s);
+void voting_print (ostream& w, string s, bool last);
 
 // -------------
 // voting_solve

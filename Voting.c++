@@ -64,8 +64,11 @@ vector<int> voting_read (const string& s) {
 // voting_print
 // -------------
 
-void voting_print (ostream& w, string s) {
+void voting_print (ostream& w, string s, bool last) {
+    if(!last)
     w << s << endl;
+    else 
+    w << s;
 }
 
 // -------------
@@ -231,7 +234,7 @@ void voting_solve (istream& r, ostream& w) {
             vector<Candidate*> winner = ballot_counter(copy_cand,count, _candidates);
             for(int i = 0; i < number_candidates; i++){
 				if (_candidates.at(i) -> check_winner() == true )
-                    voting_print(w, _candidates.at(i) -> get_name());
+                    voting_print(w, _candidates.at(i) -> get_name(), tests == number_tests - 1);
             }
        
 
