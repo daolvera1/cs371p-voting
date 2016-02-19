@@ -137,7 +137,7 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
 
         else  //eliminate losers
         {
-			//cout << "starting index: " << index_memory <<  " , min " << min << endl;
+			//----------skip to end of list and only iterate over elements that are smallest -------------
             for(int i = num_cand - 1; i >=index_memory; --i){
                 if(_box.at(i)->number_votes() == min) //remove candidates who meet the min number of votes{
                     {vector<Ballot*> removed_ballot = _box.at(i)->get_box(); //get their ballots
