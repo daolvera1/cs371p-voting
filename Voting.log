@@ -1,3 +1,45 @@
+commit dddccfba0af5af037f0707e85bd0500174f51138
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 20:32:08 2016 -0600
+
+    made edits to UVaVoting
+
+commit 78f971321a1624b4cf595fa0ef332ec12fa00db4
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 20:28:00 2016 -0600
+
+    made changte to new line character at end
+
+commit ab361d92b00400aef18d4cc70dc8b29a00c52180
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 20:08:53 2016 -0600
+
+    added test.out and uva
+
+commit a7b140feef994c42b0f76600dafe9a188b958da0
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 19:54:02 2016 -0600
+
+    added html files
+
+commit 89dba03c8b756ef3328a880c5813d9ed05dd3e37
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 19:53:33 2016 -0600
+
+    edited doxygen file
+
+commit 2638923e6c75cb43d50c41eb664f366073d47ad5
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 19:43:16 2016 -0600
+
+    added html directory
+
+commit 43fe67ce632dd4dd1d7f516d902243b264492e14
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 19:06:22 2016 -0600
+
+    adding voting log
+
 commit 0dee05c54286d099add74bee4caadf5238667b1c
 Author: Daniel Olvera <dolvera1@cs.utexas.edu>
 Date:   Thu Feb 18 18:55:49 2016 -0600
