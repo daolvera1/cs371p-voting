@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,78 +83,503 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCandidate-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Candidate Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Voting_8h_source.html">Voting.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a75b260f5169670d43128a7630d93d7d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75b260f5169670d43128a7630d93d7d8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Candidate</b> (string s)</td></tr>
+<tr class="memitem:a75b260f5169670d43128a7630d93d7d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a75b260f5169670d43128a7630d93d7d8">Candidate</a> (string s)</td></tr>
 <tr class="separator:a75b260f5169670d43128a7630d93d7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10a5540a2265f29fad62988eee1cb38f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10a5540a2265f29fad62988eee1cb38f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_ballot</b> (<a class="el" href="classBallot.html">Ballot</a> *v)</td></tr>
+<tr class="memitem:a10a5540a2265f29fad62988eee1cb38f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a10a5540a2265f29fad62988eee1cb38f">add_ballot</a> (<a class="el" href="classBallot.html">Ballot</a> *v)</td></tr>
 <tr class="separator:a10a5540a2265f29fad62988eee1cb38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a607f5bdb2d88a95054c1d5c5869b71d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a607f5bdb2d88a95054c1d5c5869b71d0"></a>
-vector&lt; <a class="el" href="classBallot.html">Ballot</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_box</b> ()</td></tr>
+<tr class="memitem:a607f5bdb2d88a95054c1d5c5869b71d0"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classBallot.html">Ballot</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a607f5bdb2d88a95054c1d5c5869b71d0">get_box</a> ()</td></tr>
 <tr class="separator:a607f5bdb2d88a95054c1d5c5869b71d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86e3dea2043be5788b2f9abf911d9a5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86e3dea2043be5788b2f9abf911d9a5a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>number_votes</b> ()</td></tr>
+<tr class="memitem:a86e3dea2043be5788b2f9abf911d9a5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a86e3dea2043be5788b2f9abf911d9a5a">number_votes</a> ()</td></tr>
 <tr class="separator:a86e3dea2043be5788b2f9abf911d9a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d8b668603df6dd67e82536b8e19d038"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d8b668603df6dd67e82536b8e19d038"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>get_name</b> ()</td></tr>
+<tr class="memitem:a3d8b668603df6dd67e82536b8e19d038"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a3d8b668603df6dd67e82536b8e19d038">get_name</a> ()</td></tr>
 <tr class="separator:a3d8b668603df6dd67e82536b8e19d038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcaf8084fff3c3e7dedc797a2e3d3bf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcaf8084fff3c3e7dedc797a2e3d3bf8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>make_loser</b> ()</td></tr>
+<tr class="memitem:abcaf8084fff3c3e7dedc797a2e3d3bf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#abcaf8084fff3c3e7dedc797a2e3d3bf8">make_loser</a> ()</td></tr>
 <tr class="separator:abcaf8084fff3c3e7dedc797a2e3d3bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab564b3ea47342ffe7f05a00ff360eb6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab564b3ea47342ffe7f05a00ff360eb6c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>check_loser</b> ()</td></tr>
+<tr class="memitem:ab564b3ea47342ffe7f05a00ff360eb6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#ab564b3ea47342ffe7f05a00ff360eb6c">check_loser</a> ()</td></tr>
 <tr class="separator:ab564b3ea47342ffe7f05a00ff360eb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52fd2adc023d7cdc840533c1afdfe025"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52fd2adc023d7cdc840533c1afdfe025"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>check_winner</b> ()</td></tr>
+<tr class="memitem:a52fd2adc023d7cdc840533c1afdfe025"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a52fd2adc023d7cdc840533c1afdfe025">check_winner</a> ()</td></tr>
 <tr class="separator:a52fd2adc023d7cdc840533c1afdfe025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4a6632bc3eedd6fac6537202dbea15e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4a6632bc3eedd6fac6537202dbea15e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>make_winner</b> ()</td></tr>
+<tr class="memitem:aa4a6632bc3eedd6fac6537202dbea15e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#aa4a6632bc3eedd6fac6537202dbea15e">make_winner</a> ()</td></tr>
 <tr class="separator:aa4a6632bc3eedd6fac6537202dbea15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75b260f5169670d43128a7630d93d7d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75b260f5169670d43128a7630d93d7d8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Candidate</b> (string s)</td></tr>
+<tr class="memitem:a75b260f5169670d43128a7630d93d7d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a75b260f5169670d43128a7630d93d7d8">Candidate</a> (string s)</td></tr>
 <tr class="separator:a75b260f5169670d43128a7630d93d7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10a5540a2265f29fad62988eee1cb38f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10a5540a2265f29fad62988eee1cb38f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_ballot</b> (<a class="el" href="classBallot.html">Ballot</a> *v)</td></tr>
+<tr class="memitem:a10a5540a2265f29fad62988eee1cb38f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a10a5540a2265f29fad62988eee1cb38f">add_ballot</a> (<a class="el" href="classBallot.html">Ballot</a> *v)</td></tr>
 <tr class="separator:a10a5540a2265f29fad62988eee1cb38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51e6f6c551f629d8941e1be2a4322c68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51e6f6c551f629d8941e1be2a4322c68"></a>
-vector&lt; <a class="el" href="classBallot.html">Ballot</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_box</b> ()</td></tr>
+<tr class="memitem:a51e6f6c551f629d8941e1be2a4322c68"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classBallot.html">Ballot</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a51e6f6c551f629d8941e1be2a4322c68">get_box</a> ()</td></tr>
 <tr class="separator:a51e6f6c551f629d8941e1be2a4322c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86e3dea2043be5788b2f9abf911d9a5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86e3dea2043be5788b2f9abf911d9a5a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>number_votes</b> ()</td></tr>
+<tr class="memitem:a86e3dea2043be5788b2f9abf911d9a5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a86e3dea2043be5788b2f9abf911d9a5a">number_votes</a> ()</td></tr>
 <tr class="separator:a86e3dea2043be5788b2f9abf911d9a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d8b668603df6dd67e82536b8e19d038"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d8b668603df6dd67e82536b8e19d038"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>get_name</b> ()</td></tr>
+<tr class="memitem:a3d8b668603df6dd67e82536b8e19d038"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a3d8b668603df6dd67e82536b8e19d038">get_name</a> ()</td></tr>
 <tr class="separator:a3d8b668603df6dd67e82536b8e19d038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcaf8084fff3c3e7dedc797a2e3d3bf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcaf8084fff3c3e7dedc797a2e3d3bf8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>make_loser</b> ()</td></tr>
+<tr class="memitem:abcaf8084fff3c3e7dedc797a2e3d3bf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#abcaf8084fff3c3e7dedc797a2e3d3bf8">make_loser</a> ()</td></tr>
 <tr class="separator:abcaf8084fff3c3e7dedc797a2e3d3bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab564b3ea47342ffe7f05a00ff360eb6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab564b3ea47342ffe7f05a00ff360eb6c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>check_loser</b> ()</td></tr>
+<tr class="memitem:ab564b3ea47342ffe7f05a00ff360eb6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#ab564b3ea47342ffe7f05a00ff360eb6c">check_loser</a> ()</td></tr>
 <tr class="separator:ab564b3ea47342ffe7f05a00ff360eb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52fd2adc023d7cdc840533c1afdfe025"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52fd2adc023d7cdc840533c1afdfe025"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>check_winner</b> ()</td></tr>
+<tr class="memitem:a52fd2adc023d7cdc840533c1afdfe025"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a52fd2adc023d7cdc840533c1afdfe025">check_winner</a> ()</td></tr>
 <tr class="separator:a52fd2adc023d7cdc840533c1afdfe025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4a6632bc3eedd6fac6537202dbea15e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4a6632bc3eedd6fac6537202dbea15e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>make_winner</b> ()</td></tr>
+<tr class="memitem:aa4a6632bc3eedd6fac6537202dbea15e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#aa4a6632bc3eedd6fac6537202dbea15e">make_winner</a> ()</td></tr>
 <tr class="separator:aa4a6632bc3eedd6fac6537202dbea15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a86d68d981f6e953aa40fddba7c84ccb1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a86d68d981f6e953aa40fddba7c84ccb1">name</a></td></tr>
+<tr class="separator:a86d68d981f6e953aa40fddba7c84ccb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd316193c54deac2db47b52fecfaf55"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classBallot.html">Ballot</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#abcd316193c54deac2db47b52fecfaf55">ballot_box</a></td></tr>
+<tr class="separator:abcd316193c54deac2db47b52fecfaf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed440b41d0ccaafed3cad6e540e99ba8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#aed440b41d0ccaafed3cad6e540e99ba8">loser</a> = false</td></tr>
+<tr class="separator:aed440b41d0ccaafed3cad6e540e99ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2333b30e2905d99b313f54b6ca21b68e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidate.html#a2333b30e2905d99b313f54b6ca21b68e">wins</a> = false</td></tr>
+<tr class="separator:a2333b30e2905d99b313f54b6ca21b68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a75b260f5169670d43128a7630d93d7d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Candidate::Candidate </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a75b260f5169670d43128a7630d93d7d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Candidate::Candidate </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a10a5540a2265f29fad62988eee1cb38f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Candidate::add_ballot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBallot.html">Ballot</a> *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a10a5540a2265f29fad62988eee1cb38f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Candidate::add_ballot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBallot.html">Ballot</a> *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab564b3ea47342ffe7f05a00ff360eb6c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Candidate::check_loser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab564b3ea47342ffe7f05a00ff360eb6c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Candidate::check_loser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52fd2adc023d7cdc840533c1afdfe025"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Candidate::check_winner </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52fd2adc023d7cdc840533c1afdfe025"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Candidate::check_winner </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a51e6f6c551f629d8941e1be2a4322c68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classBallot.html">Ballot</a>*&gt; Candidate::get_box </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a607f5bdb2d88a95054c1d5c5869b71d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classBallot.html">Ballot</a> * &gt; Candidate::get_box </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3d8b668603df6dd67e82536b8e19d038"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Candidate::get_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3d8b668603df6dd67e82536b8e19d038"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Candidate::get_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abcaf8084fff3c3e7dedc797a2e3d3bf8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Candidate::make_loser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abcaf8084fff3c3e7dedc797a2e3d3bf8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Candidate::make_loser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa4a6632bc3eedd6fac6537202dbea15e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Candidate::make_winner </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa4a6632bc3eedd6fac6537202dbea15e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Candidate::make_winner </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a86e3dea2043be5788b2f9abf911d9a5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Candidate::number_votes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a86e3dea2043be5788b2f9abf911d9a5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Candidate::number_votes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="abcd316193c54deac2db47b52fecfaf55"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classBallot.html">Ballot</a> * &gt; Candidate::ballot_box</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed440b41d0ccaafed3cad6e540e99ba8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Candidate::loser = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a86d68d981f6e953aa40fddba7c84ccb1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Candidate::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2333b30e2905d99b313f54b6ca21b68e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Candidate::wins = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>UVaVoting.c++</li>
+<li><a class="el" href="UVaVoting_8c_09_09.html">UVaVoting.c++</a></li>
 <li><a class="el" href="Voting_8h_source.html">Voting.h</a></li>
-<li>Voting.c++</li>
+<li><a class="el" href="Voting_8c_09_09.html">Voting.c++</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 18 2016 19:42:29 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 18 2016 19:53:15 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

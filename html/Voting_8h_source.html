@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Voting.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// --------------------------</span></div>
+<a href="Voting_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// --------------------------</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// projects/voting/Voting.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Copyright (C) 2016</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Glenn P. Downing</span></div>
@@ -134,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// voting_read</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// ------------</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;vector&lt;int&gt; voting_read (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;vector&lt;int&gt; <a class="code" href="Voting_8h.html#a4fa55faccbfa23ddeeb2d5150c87e0f8">voting_read</a> (<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// ------------</span></div>
@@ -147,23 +148,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// voting_print</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// -------------</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> voting_print (ostream&amp; w, <span class="keywordtype">string</span> s);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Voting_8h.html#a1de36053c7a60ccf0e29b4d067593d96">voting_print</a> (ostream&amp; w, <span class="keywordtype">string</span> s);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// -------------</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// voting_solve</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// -------------</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> voting_solve (istream&amp; r, ostream&amp; w);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">int</span> num_testcases_candidates(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;vector&lt;Candidate*&gt; ballot_counter(vector&lt;Candidate*&gt;&amp; _box, <span class="keyword">const</span> <span class="keywordtype">int</span> total_ballots, </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> <a class="code" href="Voting_8h.html#aed21eca169108fbf5b77db1e7e21af2e">voting_solve</a> (istream&amp; r, ostream&amp; w);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">int</span> <a class="code" href="Voting_8h.html#a1c71fee71dc7583cc8f742b029b47188">num_testcases_candidates</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; s);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;vector&lt;Candidate*&gt; <a class="code" href="Voting_8h.html#a5df7e3d1f19691ee3892be8e4dedcdfa">ballot_counter</a>(vector&lt;Candidate*&gt;&amp; _box, <span class="keyword">const</span> <span class="keywordtype">int</span> total_ballots, </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            vector&lt;Candidate*&gt; &amp; _original_box);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif // Voting_h</span></div>
 <div class="ttc" id="classBallot_html"><div class="ttname"><a href="classBallot.html">Ballot</a></div><div class="ttdef"><b>Definition:</b> UVaVoting.c++:30</div></div>
+<div class="ttc" id="Voting_8h_html_a4fa55faccbfa23ddeeb2d5150c87e0f8"><div class="ttname"><a href="Voting_8h.html#a4fa55faccbfa23ddeeb2d5150c87e0f8">voting_read</a></div><div class="ttdeci">vector&lt; int &gt; voting_read(const string &amp;s)</div><div class="ttdef"><b>Definition:</b> UVaVoting.c++:63</div></div>
+<div class="ttc" id="Voting_8h_html_a1c71fee71dc7583cc8f742b029b47188"><div class="ttname"><a href="Voting_8h.html#a1c71fee71dc7583cc8f742b029b47188">num_testcases_candidates</a></div><div class="ttdeci">int num_testcases_candidates(const string &amp;s)</div><div class="ttdef"><b>Definition:</b> UVaVoting.c++:85</div></div>
 <div class="ttc" id="classCandidate_html"><div class="ttname"><a href="classCandidate.html">Candidate</a></div><div class="ttdef"><b>Definition:</b> UVaVoting.c++:41</div></div>
+<div class="ttc" id="Voting_8h_html_a5df7e3d1f19691ee3892be8e4dedcdfa"><div class="ttname"><a href="Voting_8h.html#a5df7e3d1f19691ee3892be8e4dedcdfa">ballot_counter</a></div><div class="ttdeci">vector&lt; Candidate * &gt; ballot_counter(vector&lt; Candidate * &gt; &amp;_box, const int total_ballots, vector&lt; Candidate * &gt; &amp;_original_box)</div><div class="ttdef"><b>Definition:</b> UVaVoting.c++:94</div></div>
+<div class="ttc" id="Voting_8h_html_a1de36053c7a60ccf0e29b4d067593d96"><div class="ttname"><a href="Voting_8h.html#a1de36053c7a60ccf0e29b4d067593d96">voting_print</a></div><div class="ttdeci">void voting_print(ostream &amp;w, string s)</div><div class="ttdef"><b>Definition:</b> UVaVoting.c++:77</div></div>
+<div class="ttc" id="Voting_8h_html_aed21eca169108fbf5b77db1e7e21af2e"><div class="ttname"><a href="Voting_8h.html#aed21eca169108fbf5b77db1e7e21af2e">voting_solve</a></div><div class="ttdeci">void voting_solve(istream &amp;r, ostream &amp;w)</div><div class="ttdef"><b>Definition:</b> UVaVoting.c++:195</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 18 2016 19:42:29 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 18 2016 19:53:15 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

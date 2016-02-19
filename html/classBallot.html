@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,36 +83,163 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classBallot-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Ballot Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Voting_8h_source.html">Voting.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7b969e8c61d24722ee52643c9e50c47"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7b969e8c61d24722ee52643c9e50c47"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Ballot</b> (vector&lt; int &gt; &amp;v)</td></tr>
+<tr class="memitem:ac7b969e8c61d24722ee52643c9e50c47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBallot.html#ac7b969e8c61d24722ee52643c9e50c47">Ballot</a> (vector&lt; int &gt; &amp;v)</td></tr>
 <tr class="separator:ac7b969e8c61d24722ee52643c9e50c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eb966c2f87f6668bbf730fc9c4bf085"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0eb966c2f87f6668bbf730fc9c4bf085"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_alternate</b> ()</td></tr>
+<tr class="memitem:a0eb966c2f87f6668bbf730fc9c4bf085"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBallot.html#a0eb966c2f87f6668bbf730fc9c4bf085">get_alternate</a> ()</td></tr>
 <tr class="separator:a0eb966c2f87f6668bbf730fc9c4bf085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b969e8c61d24722ee52643c9e50c47"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7b969e8c61d24722ee52643c9e50c47"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Ballot</b> (vector&lt; int &gt; &amp;v)</td></tr>
+<tr class="memitem:ac7b969e8c61d24722ee52643c9e50c47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBallot.html#ac7b969e8c61d24722ee52643c9e50c47">Ballot</a> (vector&lt; int &gt; &amp;v)</td></tr>
 <tr class="separator:ac7b969e8c61d24722ee52643c9e50c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eb966c2f87f6668bbf730fc9c4bf085"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0eb966c2f87f6668bbf730fc9c4bf085"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_alternate</b> ()</td></tr>
+<tr class="memitem:a0eb966c2f87f6668bbf730fc9c4bf085"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBallot.html#a0eb966c2f87f6668bbf730fc9c4bf085">get_alternate</a> ()</td></tr>
 <tr class="separator:a0eb966c2f87f6668bbf730fc9c4bf085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4180f729087d2b2de6d516175a1cd96e"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBallot.html#a4180f729087d2b2de6d516175a1cd96e">votes</a></td></tr>
+<tr class="separator:a4180f729087d2b2de6d516175a1cd96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e2bcd2e7bcac7fd81ab0bbde674df6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBallot.html#a73e2bcd2e7bcac7fd81ab0bbde674df6">pref</a> = 0</td></tr>
+<tr class="separator:a73e2bcd2e7bcac7fd81ab0bbde674df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac7b969e8c61d24722ee52643c9e50c47"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ballot::Ballot </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac7b969e8c61d24722ee52643c9e50c47"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ballot::Ballot </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0eb966c2f87f6668bbf730fc9c4bf085"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ballot::get_alternate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0eb966c2f87f6668bbf730fc9c4bf085"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ballot::get_alternate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a73e2bcd2e7bcac7fd81ab0bbde674df6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ballot::pref = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4180f729087d2b2de6d516175a1cd96e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; int &gt; Ballot::votes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>UVaVoting.c++</li>
+<li><a class="el" href="UVaVoting_8c_09_09.html">UVaVoting.c++</a></li>
 <li><a class="el" href="Voting_8h_source.html">Voting.h</a></li>
-<li>Voting.c++</li>
+<li><a class="el" href="Voting_8c_09_09.html">Voting.c++</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 18 2016 19:42:29 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 18 2016 19:53:15 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
