@@ -1,0 +1,167 @@
+commit 0dee05c54286d099add74bee4caadf5238667b1c
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 18:55:49 2016 -0600
+
+    added own testcases
+
+commit 20f4d73c7e74effa9f01b6006caebaf3d02b6d38
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 15:44:45 2016 -0600
+
+    edited test cases and removed function from voting.h
+
+commit 5b7ee7c4fc5df5ff8c2e105cdec455338366b434
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 15:28:16 2016 -0600
+
+    finished implementing simple solution that is passing test cases
+
+commit 55858feb463bd8592d6593de46914275bbc72954
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 10:34:04 2016 -0600
+
+    adding Ballot class
+
+commit 118fb0ad89006d637080d350c27ba8d322421cbb
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 10:23:37 2016 -0600
+
+    having problem getting next vote
+
+commit dcadc30edbdc399b842333080cd2eeab742fb147
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 10:00:30 2016 -0600
+
+    Update Running.in
+
+commit 9f2222c995765083402316649d58cba3231aaf52
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 09:59:48 2016 -0600
+
+    Update Running.out
+
+commit 59ba209bfe47cf2db9893cc9363ec3aecb0aed95
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 09:56:43 2016 -0600
+
+    Update Running.out
+
+commit 4c2497bb681a3deb89ac4a2399ea888aabd5f937
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 09:56:08 2016 -0600
+
+    Update Running.in
+
+commit 58d94b083faa41f0212b69e901bb7fc562316e8f
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 09:39:29 2016 -0600
+
+    Update Running.in
+
+commit b4b62849e906d065179c30860790c1b087c41a49
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 09:37:25 2016 -0600
+
+    Update RunVoting.out
+
+commit e8de9de5632236aa6c84ae5bee82c54921896dfb
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 03:11:30 2016 -0600
+
+    Update RunVoting.out
+
+commit 3c84b9c31229cddc7d5478f45ea5a1694876f130
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 03:10:49 2016 -0600
+
+    Update RunVoting.in
+
+commit 98ecba885a79f6344d3338af47ebf3d9ea91327b
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 03:07:14 2016 -0600
+
+    Update RunVoting.out
+
+commit 8b350a03caa8c9b6b7a71b00028977c1067dfb89
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Thu Feb 18 03:04:18 2016 -0600
+
+    Update RunVoting.in
+
+commit dd5c43bbcc8bbdfa240558a76ff71aed99447112
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Thu Feb 18 02:57:41 2016 -0600
+
+    implemneted simple solution
+
+commit ff010ea701867dd1563ebfbdeb6eb9d1e199de36
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Wed Feb 17 13:07:38 2016 -0600
+
+    making edits
+
+commit 432bf72e25e3bf486b88948c3627573d01190b7f
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Tue Feb 16 16:09:30 2016 -0600
+
+    added vote counter
+
+commit 0b4ba94debf9b756ab6316338749fe721a61ba33
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Tue Feb 16 15:01:26 2016 -0600
+
+    added sort function for candidates
+
+commit 145d3141fd8ac5e678c41c4400cfffa48c7f4609
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Tue Feb 16 14:36:46 2016 -0600
+
+    adding .travis and .out file
+
+commit 6a286ff0f33c10ded0a967cb270e653fe3d222a8
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Tue Feb 16 14:33:07 2016 -0600
+
+    counted candidates first round and added to approprite ballot box
+
+commit 16a4c0c0711ea252646da24425d296350100083d
+Author: Daniel Olvera <dolvera1@cs.utexas.edu>
+Date:   Tue Feb 16 14:14:05 2016 -0600
+
+    added Candidate class and changed some lines in voting_solve
+
+commit c7d42f71d3fbf52f31238fc832f0974afb7f2232
+Author: Daniel Olvera <daolvera1@gmail.com>
+Date:   Sun Feb 14 23:14:28 2016 -0600
+
+    changed names in TestVoting.c++
+
+commit 56f8759ef6456105393ecca06fa415c4019af0e5
+Author: Daniel Olvera <daolvera1@gmail.com>
+Date:   Sun Feb 14 23:05:16 2016 -0600
+
+    adding RunVoting.in
+
+commit 33a71c8c2d1b353dc0457f340637fb5707b15249
+Author: Daniel Olvera <daolvera1@gmail.com>
+Date:   Sun Feb 14 23:02:11 2016 -0600
+
+    editing files
+
+commit 250065f237f4f127c0d28ded1e67da368008792e
+Author: Daniel Olvera <daolvera1@gmail.com>
+Date:   Sun Feb 14 21:26:05 2016 -0600
+
+    making edits to new files
+
+commit d3248d5af1cc42c3b206077a655f9a9a9c5e979d
+Author: Daniel Olvera <daolvera1@gmail.com>
+Date:   Sun Feb 14 21:06:40 2016 -0600
+
+    adding files for project
+
+commit f8669631592ed19f602d6edabb50402735ec91d0
+Author: daolvera1 <daolvera1@gmail.com>
+Date:   Sun Feb 14 18:06:35 2016 -0600
+
+    Initial commit
