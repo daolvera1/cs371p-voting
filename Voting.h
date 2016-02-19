@@ -19,6 +19,32 @@
 
 using namespace std;
 
+class Ballot {
+private:
+    vector<int> votes;
+    int pref = 0;
+public: 
+    Ballot(vector<int>& v);
+    int get_alternate();};
+class Candidate
+{
+private:
+    string name;
+    vector<Ballot*> ballot_box;
+    bool loser = false;
+    bool wins = false;
+public:
+    Candidate (string s); //constructor
+    void add_ballot(Ballot* v); //adds ballot to their ballot box
+    vector<Ballot*> get_box();
+    int number_votes();
+    string get_name(); //dont know if need this
+    void make_loser();
+    bool check_loser();
+    bool check_winner();
+    void make_winner();
+};
+
 // ------------
 // voting_read
 // ------------
@@ -52,7 +78,7 @@ vector<int> voting_read (const string& s);
  * @param j the end       of the range, inclusive
  * @param v the max cycle length
  */
-void voting_print (ostream& w, int i, int j, int v);
+void voting_print (ostream& w, string s);
 
 // -------------
 // voting_solve
@@ -64,4 +90,6 @@ void voting_print (ostream& w, int i, int j, int v);
  */
 void voting_solve (istream& r, ostream& w);
 int num_testcases_candidates(const string& s);
+vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ballots, 
+			vector<Candidate*> & _original_box);
 #endif // Voting_h
