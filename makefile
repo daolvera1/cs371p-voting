@@ -48,6 +48,7 @@ clean:
 	rm -f RunVoting.tmp
 	rm -f TestVoting
 	rm -f TestVoting.tmp
+	rm -f UVaVoting
 
 config:
 	git config -l
@@ -68,6 +69,8 @@ status:
 
 test: RunVoting.tmp TestVoting.tmp
 
+online-test: UVaVoting.tmp
+
 voting-tests:
 	git clone https://github.com/cs371p-spring-2016/voting-tests.git
 
@@ -80,8 +83,15 @@ Voting.log:
 Doxyfile:
 	doxygen -g
 
+UVaVoting: UVaVoting.c++
+	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) UVaVoting.c++ -o UVaVoting
+
 RunVoting: Voting.h Voting.c++ RunVoting.c++
 	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) Voting.c++ RunVoting.c++ -o RunVoting
+
+UVaVoting.tmp: UVaVoting
+	./UVaVoting < RunVoting.in > UVaVoting.tmp
+	diff UVaVoting.tmp RunVoting.out 
 
 RunVoting.tmp: RunVoting
 	./RunVoting < RunVoting.in > RunVoting.tmp

@@ -65,10 +65,9 @@ vector<int> voting_read (const string& s) {
 // -------------
 
 void voting_print (ostream& w, string s, bool last) {
-    if(!last)
+   
     w << s << endl;
-    else 
-    w << s;
+  
 }
 
 // -------------
@@ -89,7 +88,7 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
             vector<Candidate*> & _original_box){
     vector<Candidate*> winners;
     int tied = 1, num_cand=_box.size();
-    int index_memory = 0, round = 0;
+    int _round = 0;
     
     #if(DEBUG)
     cout << "total ballot : " << total_ballots << endl;
@@ -124,7 +123,7 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
             //find min number of votes
             if(cand->number_votes() < min){
                 min = cand->number_votes();
-                index_memory = i;
+             //   index_memory = i;
             }
         }
         //check if somebody won
@@ -142,7 +141,7 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
         else  //eliminate losers
         {
             //----------skip to end of list and only iterate over elements that are smallest -------------
-            for(int i = num_cand - 1; i >=index_memory; --i){
+            for(int i = num_cand - 1; i >=0; --i){
                 if(_box.at(i)->number_votes() == min) //remove candidates who meet the min number of votes{
                     {vector<Ballot*> removed_ballot = _box.at(i)->get_box(); //geting ballots of elimiated candidates
                     #if(DEBUG)
@@ -173,7 +172,7 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
             }
             
             num_cand = _box.size(); //resize number of candidates
-            round++;
+            _round++;
     
         }
 
