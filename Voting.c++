@@ -96,10 +96,11 @@ vector<Candidate*> ballot_counter(vector<Candidate*>& _box, const int total_ball
         //check if any candidates have over 50%
         int min = _box.at(0)->number_votes(); // set min number votes to max
 		tied = 1;
+        cout << "\n\nnew round:\n";
         for(int i = 0; i < num_cand; i++){
             
             Candidate* cand = _box.at(i);
-
+            cout << "getting votes: " << cand->number_votes() << endl;
             #if(DEBUG)
             cout << double (cand->number_votes())  / total_ballots << 
 			" " << _box.at(i)->get_name() << endl;
@@ -197,6 +198,8 @@ void voting_solve (istream& r, ostream& w) {
             const int number_candidates = num_testcases_candidates(s);
             vector<Candidate*> _candidates;
 			vector<Candidate*> copy_cand;
+	        _candidates.reserve(number_candidates);
+	        copy_cand.reserve(number_candidates);// wont have to readjust size of array
             //getting names of candidates
             for (int i = 0;i < number_candidates; i++){
 
@@ -211,17 +214,13 @@ void voting_solve (istream& r, ostream& w) {
 					break;
 				else {
 					ballots = voting_read(s); // parse ballot into vector
-					//cout << "printing balllot " << s << endl;
                     count++;
-                    int candidate_number = ballots.front();
+                    int candidate_number = ballots.front(); //get first preference
 
-					_candidates.at(candidate_number - 1)->add_ballot(new Ballot(ballots)); //add ballot to apprioriate candidate box
+                    //add ballot to apprioriate candidate box
+					_candidates.at(candidate_number - 1)->add_ballot(new Ballot(ballots)); 
 				}
-          }
-/*			for (int i = 0; i < number_candidates; i++){ //make copy to sort 
-			
-				copy_cand.push_back(_candidates.at(i));	
-			}*/
+            }
 
 		    //sort the candidates by votes	
             sort(copy_cand.begin(), copy_cand.end(), [](Candidate* c1, Candidate* c2){
