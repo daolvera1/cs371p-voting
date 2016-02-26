@@ -99,7 +99,7 @@ TEST(voting_read_test, voting_random_numbers) {
 // voting_print
 // ----
 
-TEST(ballot_counter_test, counter_1) {
+/*TEST(ballot_counter_test, counter_1) {
 	int ballots = 1;
 	vector<Candidate*> original;
 
@@ -122,9 +122,10 @@ TEST(ballot_counter_test, counter_1) {
     vector<Candidate*> actual = ballot_counter(temp, ballots, original);
      ASSERT_EQ("bob", actual.at(0) -> get_name());
 }
+*/
 
 
-TEST(ballot_counter_test, counter_2) {
+/*TEST(ballot_counter_test, counter_2) {
 	int ballots = 1;
 	vector<Candidate*> original;
 
@@ -170,7 +171,7 @@ TEST(ballot_counter_test, counter_3) {
 
     vector<Candidate*> actual = ballot_counter(temp, ballots, original);
      ASSERT_EQ("gary",actual.at(0)->get_name());
-}
+}*/
 
 
 /*TEST(voting_print_test, print_name) {
