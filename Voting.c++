@@ -65,9 +65,10 @@ vector<int> voting_read (const string& s) {
 // -------------
 
 void voting_print (ostream& w, string s, bool last) {
-   
+    if(!last)
     w << s << endl;
-  
+    else 
+    w << s;    
 }
 
 // -------------
