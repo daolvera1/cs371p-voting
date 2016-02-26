@@ -211,11 +211,14 @@ void voting_solve (istream& r, ostream& w) {
 
             const int number_candidates = num_testcases_candidates(s);
             vector<Candidate*> _candidates;
+            vector<Candidate*> copy_cand;
             //getting names of candidates
             for (int i = 0;i < number_candidates; i++){
 
                 getline(r,s); // get candidate names
                 _candidates.push_back( new Candidate(s)); //add candidate into vector of candidates
+                copy_cand.push_back(_candidates.at(i));
+                
             }
 
             vector<int> ballots;
@@ -231,11 +234,11 @@ void voting_solve (istream& r, ostream& w) {
                     _candidates.at(candidate_number - 1)->add_ballot(new Ballot(ballots)); //add ballot to apprioriate candidate box
                 }
           }
-            vector<Candidate*> copy_cand;
-            for (int i = 0; i < number_candidates; i++){ //make copy to sort 
+          //  vector<Candidate*> copy_cand;
+        //    for (int i = 0; i < number_candidates; i++){ //make copy to sort 
             
-                copy_cand.push_back(_candidates.at(i)); 
-            }
+          //      copy_cand.push_back(_candidates.at(i)); 
+        //    }
 
             //sort the candidates by votes  
             sort(copy_cand.begin(), copy_cand.end(), [](Candidate* c1, Candidate* c2){
